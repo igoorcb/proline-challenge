@@ -47,9 +47,12 @@ composer install
 ./vendor/bin/sail up -d
 ```
 
-### 4. Configurar Banco de Dados
+### 4. Configurar Aplicação
 
 ```bash
+# Gerar chave da aplicação
+./vendor/bin/sail artisan key:generate
+
 # Rodar as migrações
 ./vendor/bin/sail artisan migrate
 ```
