@@ -10,20 +10,22 @@ class Media extends Model
     protected $fillable = [
         'batch_id',
         'type',
-        'store_id',
-        'user_id',
+        'operation_name',
         'latitude',
         'longitude',
         'battery_level',
-        'media_url',
-        'media_type',
-        'event_created_at',
+        'image',
+        'status',
+        'file_path',
+        'file_size',
+        'media_created_at',
     ];
 
     protected $casts = [
-        'event_created_at' => 'datetime',
+        'media_created_at' => 'datetime',
         'latitude' => 'float',
         'longitude' => 'float',
+        'file_size' => 'integer',
     ];
 
     public function batch(): BelongsTo

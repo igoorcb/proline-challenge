@@ -10,22 +10,26 @@ class StockAvailability extends Model
     protected $fillable = [
         'batch_id',
         'type',
+        'operation_id',
         'store_id',
-        'product_id',
         'user_id',
-        'latitude',
-        'longitude',
-        'battery_level',
-        'available',
-        'quantity',
-        'event_created_at',
+        'product_id',
+        'product_name',
+        'quantity_available',
+        'quantity_required',
+        'stock_status',
+        'location',
+        'started_at',
+        'registered_at',
+        'finished_at',
     ];
 
     protected $casts = [
-        'event_created_at' => 'datetime',
-        'latitude' => 'float',
-        'longitude' => 'float',
-        'available' => 'boolean',
+        'quantity_available' => 'integer',
+        'quantity_required' => 'integer',
+        'started_at' => 'datetime',
+        'registered_at' => 'datetime',
+        'finished_at' => 'datetime',
     ];
 
     public function batch(): BelongsTo

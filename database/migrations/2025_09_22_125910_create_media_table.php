@@ -15,14 +15,15 @@ return new class extends Migration
             $table->id();
             $table->foreignId('batch_id')->constrained()->onDelete('cascade');
             $table->string('type');
-            $table->integer('store_id')->nullable();
-            $table->integer('user_id')->nullable();
+            $table->string('operation_name')->nullable();
             $table->decimal('latitude', 10, 8)->nullable();
             $table->decimal('longitude', 11, 8)->nullable();
             $table->integer('battery_level')->nullable();
-            $table->text('media_url')->nullable();
-            $table->string('media_type')->nullable();
-            $table->timestamp('event_created_at');
+            $table->text('image')->nullable();
+            $table->string('status')->nullable();
+            $table->string('file_path')->nullable();
+            $table->bigInteger('file_size')->nullable();
+            $table->timestamp('media_created_at')->nullable();
             $table->timestamps();
         });
     }

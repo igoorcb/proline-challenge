@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('filename');
             $table->json('raw_data')->nullable();
-            $table->enum('status', ['pending', 'processing', 'success', 'error'])->default('pending');
+            $table->enum('status', ['pending', 'processing', 'completed', 'error'])->default('pending');
             $table->integer('total_items')->default(0);
             $table->integer('processed_items')->default(0);
             $table->integer('failed_items')->default(0);

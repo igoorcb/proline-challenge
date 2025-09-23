@@ -10,22 +10,25 @@ class ShelfLife extends Model
     protected $fillable = [
         'batch_id',
         'type',
+        'operation_id',
         'store_id',
-        'product_id',
         'user_id',
-        'latitude',
-        'longitude',
-        'battery_level',
+        'product_id',
+        'product_name',
         'expiry_date',
-        'batch_code',
-        'event_created_at',
+        'days_to_expire',
+        'condition',
+        'started_at',
+        'registered_at',
+        'finished_at',
     ];
 
     protected $casts = [
-        'event_created_at' => 'datetime',
         'expiry_date' => 'date',
-        'latitude' => 'float',
-        'longitude' => 'float',
+        'days_to_expire' => 'integer',
+        'started_at' => 'datetime',
+        'registered_at' => 'datetime',
+        'finished_at' => 'datetime',
     ];
 
     public function batch(): BelongsTo

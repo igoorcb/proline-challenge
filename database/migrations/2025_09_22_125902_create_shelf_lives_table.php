@@ -15,15 +15,17 @@ return new class extends Migration
             $table->id();
             $table->foreignId('batch_id')->constrained()->onDelete('cascade');
             $table->string('type');
+            $table->string('operation_id')->nullable();
             $table->integer('store_id')->nullable();
-            $table->integer('product_id')->nullable();
             $table->integer('user_id')->nullable();
-            $table->decimal('latitude', 10, 8)->nullable();
-            $table->decimal('longitude', 11, 8)->nullable();
-            $table->integer('battery_level')->nullable();
+            $table->integer('product_id')->nullable();
+            $table->string('product_name')->nullable();
             $table->date('expiry_date')->nullable();
-            $table->string('batch_code')->nullable();
-            $table->timestamp('event_created_at');
+            $table->integer('days_to_expire')->nullable();
+            $table->string('condition')->nullable();
+            $table->timestamp('started_at')->nullable();
+            $table->timestamp('registered_at')->nullable();
+            $table->timestamp('finished_at')->nullable();
             $table->timestamps();
         });
     }
